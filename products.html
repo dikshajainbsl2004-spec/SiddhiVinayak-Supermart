@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | SiddhiVinayak Supermart</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+
+    <div class="container">
+
+        <!-- Logo -->
+
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/logo/logo.png" alt="Logo" height="60" class="me-2">
+            <span class="fw-bold text-success">
+                SiddhiVinayak Supermart
+            </span>
+        </a>
+
+        <!-- Mobile Button -->
+
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+       <div class="collapse navbar-collapse" id="menu">
+
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="products.html">Products</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+
+                    <a class="nav-link" href="wishlist.html">
+
+                        <i class="bi bi-heart-fill text-danger"></i>
+
+                        Wishlist
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+            <div class="d-flex align-items-center">
+
+                <!-- Search Button -->
+                <button class="btn btn-success me-2">
+                    <i class="bi bi-search"></i>
+                </button>
+
+                <!-- Cart Button -->
+                <div class="position-relative">
+
+                    <button class="btn btn-warning" id="cartBtn">
+
+                        <i class="bi bi-cart3"></i>
+
+                    </button>
+
+                    <span id="cartCount"
+                        class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+
+                        0
+
+                    </span>
+
+                </div>
+
+            </div>
+
+    </div>
+
+</nav>
+
+<!-- Page Banner -->
+<section class="page-banner">
+
+    <div class="container text-center">
+
+        <h1>Our Products</h1>
+
+        <p>
+            Browse all products available at SiddhiVinayak Supermart.
+        </p>
+
+    </div>
+
+</section>
+<!-- Category Filter -->
+<section class="pb-5">
+
+    <div class="filter-buttons">
+
+        <button class="btn btn-success active" data-filter="all">
+            All
+        </button>
+
+        <button class="btn btn-outline-success" data-filter="grocery">
+            Grocery
+        </button>
+
+        <button class="btn btn-outline-success" data-filter="personal">
+            Personal Care
+        </button>
+
+        <button class="btn btn-outline-success" data-filter="home">
+            Home Care
+        </button>
+
+        <button class="btn btn-outline-success" data-filter="baby">
+            Baby Care
+        </button>
+
+        <button class="btn btn-outline-success" data-filter="snacks">
+            Snacks & Beverages
+        </button>
+
+        <button class="btn btn-outline-success" data-filter="cosmetics">
+            Cosmetics
+        </button>
+
+        <button class="btn btn-outline-success" data-filter="household">
+            Household Essentials
+        </button>
+
+    </div>
+
+</section>
+<!-- Search Section -->
+
+<section class="py-4 bg-light">
+
+    <div class="container">
+
+        <div class="row justify-content-center mb-5">
+
+            <div class="col-lg-6">
+                <div class="input-group">
+
+                    <span class="input-group-text bg-white">
+                        <i class="bi bi-search"></i>
+                    </span>
+
+                    <input type="text"
+                       id="searchInput"
+                       class="form-control form-control-lg"
+                       placeholder="🔍 Search products...">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="products py-5">
+
+    <div class="container">
+
+        <div class="row g-4" id="productContainer">
+
+            <!-- Product 1 -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+
+                <div class="product-card"
+                    data-name="Aashirvaad Atta Grocery"
+                    data-category="grocery">
+
+                    <span class="badge bg-danger position-absolute m-2">
+                        New
+                    </span>
+
+                    <img 
+                        id="modalImage"
+                        src="images/products/atta.jpg" 
+                        class="img-fluid rounded">
+
+                    <button class="wishlist-btn"
+                        data-name="Aashirvaad Atta"
+                        data-price="320"
+                        data-image="images/products/atta.jpg">
+
+                        <i class="bi bi-heart"></i>
+                    </button>
+
+                    <div class="product-info">
+
+                        <h5>Aashirvaad Atta</h5>
+
+                        <p class="text-muted">Grocery</p>
+
+                        <h4
+                            id="modalPrice"
+                            class="text-success">
+                            ₹320
+                        </h4>
+                        
+                        <a
+                            href="product-details.html"
+                            class="btn btn-success w-100 view-details"
+                            data-name="Aashirvaad Atta"
+                            data-price="320"
+                            data-image="images/products/atta.jpg"
+                            data-description="Premium quality whole wheat flour made from selected wheat grains.">
+
+                            View Details
+
+                        </a>
+                        <div class="quantity-box d-flex justify-content-center align-items-center my-2">
+
+                            <button class="btn btn-outline-secondary qty-minus">-</button>
+
+                                <input type="text"
+                                    class="form-control text-center qty-input mx-2"
+                                    value="1"
+                                    readonly>
+
+                            <button class="btn btn-outline-secondary qty-plus">+</button>
+
+                        </div>
+
+                        <button class="btn btn-warning w-100 mt-2 add-to-cart"
+                            data-name="Aashirvaad Atta"
+                            data-price="320"
+                            data-image="images/products/atta.jpg">
+
+                            <i class="bi bi-cart-plus"></i>
+                            Add to Cart
+
+                        </button>
+                        <div class="rating mt-3">
+
+                            <i class="bi bi-star-fill text-warning"></i>
+
+                            <i class="bi bi-star-fill text-warning"></i>
+
+                            <i class="bi bi-star-fill text-warning"></i>
+
+                            <i class="bi bi-star-fill text-warning"></i>
+
+                            <i class="bi bi-star-half text-warning"></i>
+
+                            <small class="text-muted ms-2">
+
+                                (4.5)
+
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Product 2 -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+
+                <div class="product-card"
+                    data-name="Parle G Biscuit Snacks"
+                    data-category="snacks">
+
+                    <img 
+                        id="modalImage"
+                        src="images/products/parleg.jpg" 
+                        class="img-fluid rounded">
+                    <button class="wishlist-btn"
+                        data-name="Parle-G"
+                        data-price="10"
+                        data-image="images/products/parleg.jpg">
+                        
+                        <i class="bi bi-heart"></i>
+                    </button>
+
+                    <div class="product-info">
+
+                        <h5>Parle-G</h5>
+
+                        <p class="text-muted">Snacks & Beverages</p>
+
+                        <h4 class="text-success">₹10</h4>
+
+                        <a
+                            href="product-details.html"
+                            class="btn btn-success w-100 view-details"
+                            data-name="Parle-G"
+                            data-price="10"
+                            data-image="images/products/parleg.jpg"
+                            data-description="Popular glucose biscuits loved by every family.">
+
+                            View Details
+
+                        </a>
+                        <div class="quantity-box d-flex justify-content-center align-items-center my-2">
+
+                            <button class="btn btn-outline-secondary qty-minus">-</button>
+
+                                <input type="text"
+                                    class="form-control text-center qty-input mx-2"
+                                    value="1"
+                                    readonly>
+
+                            <button class="btn btn-outline-secondary qty-plus">+</button>
+
+                        </div>
+                        <button class="btn btn-warning w-100 mt-2 add-to-cart"
+                            data-name="Parle-G"
+                            data-price="10"
+                            data-image="images/products/parleg.jpg">
+
+                            <i class="bi bi-cart-plus"></i>
+                            Add to Cart
+
+                        </button>
+                        <div class="rating mt-3">
+
+                            <i class="bi bi-star-fill text-warning"></i>
+
+                            <i class="bi bi-star-fill text-warning"></i>
+
+                            <i class="bi bi-star-fill text-warning"></i>
+
+                            <i class="bi bi-star-fill text-warning"></i>
+
+                            <i class="bi bi-star-half text-warning"></i>
+
+                            <small class="text-muted ms-2">
+
+                                (4.5)
+
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Product 3 -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+
+                <div class="product-card"
+                    data-name="Clinic Plus Shampoo Personal Care"
+                    data-category="personal">
+
+                    <img 
+                        id="modalImage"
+                        src="images/products/clinicplus.jpg" 
+                        class="img-fluid rounded">
+
+                    <button class="wishlist-btn"
+                        data-name="clinicplus"
+                        data-price="120"
+                        data-image="images/products/clinicplus.jpg">
+                        
+                        <i class="bi bi-heart"></i>
+                    </button>
+                    <div class="product-info">
+
+                        <h5>Clinic Plus Shampoo</h5>
+
+                        <p class="text-muted">Personal Care</p>
+
+                        <h4 class="text-success">₹120</h4>
+
+                        <a
+                            href="product-details.html"
+                            class="btn btn-success w-100 view-details"
+                            data-name="Clinic Plus Shampoo"
+                            data-price="120"
+                            data-image="images/products/clinicplus.jpg"
+                            data-description="Strong and healthy hair shampoo for soft, shiny and healthy hair.">
+
+                            View Details
+
+                        </a>
+                        <div class="quantity-box d-flex justify-content-center align-items-center my-2">
+
+                            <button class="btn btn-outline-secondary qty-minus">-</button>
+
+                                <input type="text"
+                                    class="form-control text-center qty-input mx-2"
+                                    value="1"
+                                    readonly>
+
+                            <button class="btn btn-outline-secondary qty-plus">+</button>
+
+                        </div>
+                        <button class="btn btn-warning w-100 mt-2 add-to-cart"
+                            data-name="Clinic Plus Shampoo"
+                            data-price="120"
+                            data-image="images/products/clinicplus.jpg">
+
+                            <i class="bi bi-cart-plus"></i>
+                            Add to Cart
+
+                        </button>
+                        <div class="rating mt-3">
+
+                            <i class="bi bi-star-fill text-warning"></i>
+
+                            <i class="bi bi-star-fill text-warning"></i>
+
+                            <i class="bi bi-star-fill text-warning"></i>
+
+                            <i class="bi bi-star-fill text-warning"></i>
+
+                            <i class="bi bi-star-half text-warning"></i>
+
+                            <small class="text-muted ms-2">
+
+                                (4.5)
+
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Product 4 -->
+            <div class="col-lg-3 col-md-4 col-sm-6">
+
+                <div class="product-card"
+                    data-name="Harpic Cleaner Home Care"
+                    data-category="home">
+
+                    <img 
+                        id="modalImage"
+                        src="images/products/harpic.jpg" 
+                        class="img-fluid rounded">
+                    <button class="wishlist-btn"
+                        data-name="Harpic"
+                        data-price="110"
+                        data-image="images/products/harpic.jpg">
+                        
+                        <i class="bi bi-heart"></i>
+                    </button>
+
+                    <div class="product-info">
+
+                        <h5>Harpic Cleaner</h5>
+
+                        <p class="text-muted">Home Care</p>
+
+                        <h4 class="text-success">₹110</h4>
+
+                        <a
+                            href="product-details.html"
+                            class="btn btn-success w-100 view-details"
+                            data-name="Harpic Cleaner"
+                            data-price="110"
+                            data-image="images/products/harpic.jpg"
+                            data-description="Powerful toilet cleaner that removes tough stains and kills germs.">
+
+                            View Details
+
+                        </a>
+                        <div class="quantity-box d-flex justify-content-center align-items-center my-2">
+
+                            <button class="btn btn-outline-secondary qty-minus">-</button>
+
+                                <input type="text"
+                                    class="form-control text-center qty-input mx-2"
+                                    value="1"
+                                    readonly>
+
+                            <button class="btn btn-outline-secondary qty-plus">+</button>
+
+                        </div>
+                        <button class="btn btn-warning w-100 mt-2 add-to-cart"
+                            data-name="Harpic Cleaner"
+                            data-price="110"
+                            data-image="images/products/harpic.jpg">
+
+                            <i class="bi bi-cart-plus"></i>
+                            Add to Cart
+
+                        </button>
+                        <div class="rating mt-3">
+
+                            <i class="bi bi-star-fill text-warning"></i>
+
+                            <i class="bi bi-star-fill text-warning"></i>
+
+                            <i class="bi bi-star-fill text-warning"></i>
+
+                            <i class="bi bi-star-fill text-warning"></i>
+
+                            <i class="bi bi-star-half text-warning"></i>
+
+                            <small class="text-muted ms-2">
+
+                                (4.5)
+
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- Product Details Modal -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header bg-success text-white">
+
+                <h5 class="modal-title" id="modalTitle">
+                    Product Details
+                </h5>
+
+                <button type="button"
+                        class="btn-close btn-close-white"
+                        data-bs-dismiss="modal"
+                        aria-label="Close">
+                </button>
+
+            </div>
+
+            <!-- Modal Body -->
+            <div class="modal-body">
+
+                <div class="row">
+
+                    <!-- Product Image -->
+                    <div class="col-md-5 text-center">
+
+                        <img src="images/products/atta.jpg"
+                             class="img-fluid rounded"
+                             alt="Aashirvaad Atta">
+
+                    </div>
+
+                    <!-- Product Details -->
+                    <div class="col-md-7">
+
+                        <h2 id="modalName">Aashirvaad Atta</h2>
+
+                        <h4
+                            id="modalPrice"
+                            class="text-success">
+                            ₹320
+                            </h4>
+
+                        <p id="modalDescription">
+                            Premium quality whole wheat flour made from selected wheat grains.
+                            Soft rotis, trusted quality and healthy meals.
+                        </p>
+
+                        <table class="table table-bordered">
+
+                            <tr>
+                                <th>Brand</th>
+                                <td>Aashirvaad</td>
+                            </tr>
+
+                            <tr>
+                                <th>Weight</th>
+                                <td>5 Kg</td>
+                            </tr>
+
+                            <tr>
+                                <th>Category</th>
+                                <td>Grocery</td>
+                            </tr>
+
+                            <tr>
+                                <th>Availability</th>
+                                <td><span class="badge bg-success">In Stock</span></td>
+                            </tr>
+
+                        </table>
+
+                        <button class="btn btn-warning w-100 add-to-cart"
+                             data-name="Aashirvaad Atta"
+                             data-price="320"
+                             data-image="images/products/atta.jpg">
+
+                            <i class="bi bi-cart-plus"></i>
+
+                            Add to Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+
+                <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                    Close
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- Footer -->
+ <footer class="bg-success text-white py-5">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-4">
+
+            <img src="images/logo/logo.png"
+                     alt="SiddhiVinayak Supermart Logo" height="70">
+
+                <p class="mt-3">
+                    Your trusted destination for groceries, personal care,
+                    home care, baby care and household essentials.
+                </p>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <h5>Quick Links</h5>
+
+                <ul class="list-unstyled">
+
+                    <li><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+
+                    <li><a href="products.html" class="text-white text-decoration-none">Products</a></li>
+
+                    <li><a href="about.html" class="text-white text-decoration-none">About</a></li>
+
+                    <li><a href="contact.html" class="text-white text-decoration-none">Contact</a></li>
+
+                </ul>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <h5>Contact</h5>
+
+                <p>📍 SiddhiVinayak Supermart, Motala, Dist. Buldhana, Maharashtra</p>
+
+                <p>📞 +91 96239 87330</p>
+
+                <p>🕒 8:00 AM - 10:00 PM</p>
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <p class="text-center mb-0">
+            © 2026 SiddhiVinayak Supermart | All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+<!-- Shopping Cart -->
+<div id="cartSidebar" class="cart-sidebar">
+
+    <div class="cart-header">
+
+        <h4>Shopping Cart</h4>
+
+        <button id="closeCart" class="btn-close"></button>
+
+    </div>
+
+    <div id="cartItems">
+
+        <p class="text-center text-muted mt-5">
+            Cart is Empty
+        </p>
+
+    </div>
+
+    <div class="cart-footer">
+
+        <h5>Total : ₹<span id="cartTotal">0</span></h5>
+
+        <a href="checkout.html" class="btn btn-success w-100">
+                Checkout
+        </a>
+
+    </div>
+
+</div>
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+
+    <div id="cartToast"
+         class="toast align-items-center text-bg-success border-0">
+
+        <div class="d-flex">
+
+            <div class="toast-body">
+
+                ✅ Product Added Successfully
+
+            </div>
+
+            <button type="button"
+                    class="btn-close btn-close-white me-2 m-auto"
+                    data-bs-dismiss="toast">
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/script.js"></script>
+</body>
+</html>
